@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sephora_project/onboarding/onboarding.dart';
+import 'package:sephora_project/register/register_screens/register_aktivasi_akun.dart';
+import 'package:sephora_project/register/register_screens/register_buat_mpin.dart';
+import 'package:sephora_project/register/register_screens/register_permission.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -12,11 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: OnBoardingPage(),
+      debugShowCheckedModeBanner: false,
+      home: const RegisterPermission(),
     );
   }
 }
