@@ -1,4 +1,5 @@
-import 'package:sephora_project/register/register.dart';
+import 'package:sephora_project/onboarding/widgets/onboarding_button.dart';
+import 'package:sephora_project/onboarding/widgets/onboarding_help_button.dart';
 import 'package:sephora_project/onboarding/widgets/language_switch.dart';
 import 'package:sephora_project/onboarding/widgets/onboarding_content.dart';
 import 'package:sephora_project/onboarding/widgets/onboarding_indicator.dart';
@@ -59,41 +60,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 SizedBox(height: 30),
                 TextIndicator(currentText: _currentPage),
                 SizedBox(height: 61),
-                InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                          return RegisterBuatAkun();
-                        }
-                    ));
-                  },
-                  child: Container(
-                      width: 335,
-                      height: 40,
-                      decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Center(
-                        child: Text('Buat Akun Sekarang', style: TextStyle(fontSize: 14, color: Colors.white),),
-                      )
-                  ),
-                ),
-                SizedBox(height: 30),
-                InkWell(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 15,
-                        width: 15,
-                        child: Image.asset('assets/images/Chat.png'),
-                      ),
-                      SizedBox(width: 6.5),
-                      Text('Butuh Bantuan?')
-                    ],
-                  ),
-                )
+                OnBoardingButton(),
+                SizedBox(height: 20),
+                OnBoardingHelpButton()
               ],
             )
           )

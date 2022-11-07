@@ -5,9 +5,7 @@ import 'package:sephora_project/register/register_widgets/otp_text.dart';
 import 'package:sephora_project/register/register_widgets/otp_title.dart';
 import 'package:sephora_project/register/register_widgets/timer.dart';
 
-import '../register_widgets/bottom_continue_button.dart';
 import '../register_widgets/register_back_button.dart';
-import '../register_widgets/register_card.dart';
 
 class RegisterOtp extends StatefulWidget {
   const RegisterOtp({Key? key}) : super(key: key);

@@ -32,7 +32,9 @@ class CardTitle extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Informasi Data Diri', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
+                      Expanded(
+                        child: Text('Informasi Data Diri', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
+                      )
                     ],
                   )
                 ),
@@ -45,8 +47,9 @@ class CardTitle extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Masukkan informasi data diri Anda untuk', style: TextStyle(fontSize: 12, color: Color(0xFF727FA3), fontWeight: FontWeight.w400)),
-                        Text('proses pembuatan akun.', style: TextStyle(fontSize: 12, color: Color(0xFF727FA3), fontWeight: FontWeight.w400, height: 1.325)),
+                        Expanded(
+                          child: Text('Masukkan informasi data diri Anda untuk proses pembuatan akun.', style: TextStyle(fontSize: 12, color: Color(0xFF727FA3), fontWeight: FontWeight.w400)),
+                        )
                       ],
                     ),
                   ),

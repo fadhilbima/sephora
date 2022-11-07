@@ -9,7 +9,6 @@ class RegisterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 540,
-      width: 335,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           color: Colors.white,

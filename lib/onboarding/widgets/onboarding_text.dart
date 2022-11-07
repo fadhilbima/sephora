@@ -26,10 +26,24 @@ class TextIndicatorItem extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
-            Text('Kemudahan dalam Genggaman', style: TextStyle(fontSize: 18), textAlign: TextAlign.center,),
+            Expanded(
+                child: Text('Kemudahan dalam Genggaman', style: TextStyle(fontSize: 18), textAlign: TextAlign.center,)
+            ),
             SizedBox(height: 10),
-            Text('Hanya dengan 3 langkah registrasi, nikmati segala', style: TextStyle(fontSize: 14, color: Color(0xFF727FA3)), textAlign: TextAlign.center,),
-            Text('kemudahan dalam bertransaksi', style: TextStyle(fontSize: 14, color: Color(0xFF727FA3)), textAlign: TextAlign.center)
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 40,
+                child: Text('Hanya dengan 3 langkah registrasi, nikmati segala'
+                    ' kemudahan dalam bertransaksi',
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Color(0xFF727FA3)),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            )
           ],
         ),
       );
@@ -39,10 +53,18 @@ class TextIndicatorItem extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
-            Text('Transaksi Internasional', style: TextStyle(fontSize: 18), textAlign: TextAlign.center,),
+            Expanded(
+              child: Text('Transaksi Internasional', style: TextStyle(fontSize: 18), textAlign: TextAlign.center,),
+            ),
             SizedBox(height: 10),
-            Text('Nikmati kemudahan bertransaksi di seluruh dunia', style: TextStyle(fontSize: 14, color: Color(0xFF727FA3)), textAlign: TextAlign.center),
-            Text('dengan kartu VISA dan Mastercard', style: TextStyle(fontSize: 14, color: Color(0xFF727FA3)), textAlign: TextAlign.center)
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 40,
+                child: Text('Nikmati kemudahan bertransaksi di seluruh dunia dengan kartu VISA dan Mastercard', style: TextStyle(fontSize: 14, color: Color(0xFF727FA3)), textAlign: TextAlign.center),
+              ),
+            )
           ],
         ),
       );
@@ -52,10 +74,24 @@ class TextIndicatorItem extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
-            Text('Keamanan Dalam Bertransaksi', style: TextStyle(fontSize: 18), textAlign: TextAlign.center,),
+            Expanded(
+              child: Text('Keamanan Dalam Bertransaksi', style: TextStyle(fontSize: 18), textAlign: TextAlign.center,),
+            ),
             SizedBox(height: 10),
-            Text('Kemanan dalam bertransaksi Anda merupakan', style: TextStyle(fontSize: 14, color: Color(0xFF727FA3)), textAlign: TextAlign.center,),
-            Text('prioritas bagi kami', style: TextStyle(fontSize: 14, color: Color(0xFF727FA3)), textAlign: TextAlign.center)
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 40,
+                child: Text('Keamanan dalam bertransaksi Anda merupakan'
+                    ' prioritas bagi kami',
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Color(0xFF727FA3)),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            )
           ],
         ),
       );

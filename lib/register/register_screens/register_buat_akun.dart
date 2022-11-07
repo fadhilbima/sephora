@@ -15,54 +15,61 @@ class _RegisterBuatAkunState extends State<RegisterBuatAkun> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFFF3F7FD),
       body: Stack(
-        alignment: Alignment.topCenter,
+        alignment: Alignment.topLeft,
         children: [
-          Container(
-              height: 88,
-              width: 375,
-              child: Stack(
-                alignment: Alignment.bottomLeft,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 20, bottom: 11),
-                    child: ArrowBackButton(),
-                  ),
-                  Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Padding(
-                        padding: EdgeInsets.only(bottom: 14),
-                        child: RegisterTitle(),
-                      )
-                  )
-                ],
-              )
+          SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 108),
+              child: RegisterCard(),
+            ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 88,
+            color: Color(0xFFF3F7FD),
+            child: Stack(
+              alignment: Alignment.topLeft,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 20, top: 45),
+                  child: ArrowBackButton(),
+                ),
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 48),
+                    child: RegisterTitle(),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 108),
-                child: RegisterCard(),
+              Container(
+                height: 120,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: ContinueButton(),
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 10
+                      )
+                    ]
+                ),
               ),
             ],
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 692),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              child: ContinueButton(),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                 boxShadow: [
-                   BoxShadow(
-                     color: Colors.grey,
-                     blurRadius: 10
-                   )
-                 ]
-              ),
-            ),
           )
         ],
       ),

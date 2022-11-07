@@ -20,7 +20,6 @@ class ContinueButton extends StatelessWidget {
             },
             child: Container(
               height: 40,
-              width: 335,
               decoration: BoxDecoration(
                 color: Color(0xFF2F82FF),
                 borderRadius: BorderRadius.circular(10),

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sephora_project/onboarding/onboarding.dart';
-import 'package:sephora_project/register/register_screens/register_aktivasi_akun.dart';
-import 'package:sephora_project/register/register_screens/register_buat_mpin.dart';
-import 'package:sephora_project/register/register_screens/register_permission.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const RegisterPermission(),
+      home: const OnBoardingPage(),
     );
   }
 }
