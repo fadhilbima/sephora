@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sephora_project/home/home_export.dart';
 import 'package:sephora_project/register/register.dart';
 
 class Success extends StatelessWidget {
@@ -27,7 +28,9 @@ class Success extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: InkWell(
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return HomieInactivated();
+                  }));
                 },
                 child: Container(
                   height: 40,
