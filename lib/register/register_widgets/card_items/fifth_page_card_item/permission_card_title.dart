@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CardTitle extends StatelessWidget {
-  const CardTitle({Key? key}) : super(key: key);
+class PermissionCardTitle extends StatelessWidget {
+  const PermissionCardTitle({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +11,7 @@ class CardTitle extends StatelessWidget {
       child: Stack(
         children: [
           Container(
+            padding: EdgeInsets.all(12),
             height: 40,
             width: 40,
             decoration: BoxDecoration(
@@ -18,7 +19,11 @@ class CardTitle extends StatelessWidget {
               borderRadius: BorderRadius.circular(6),
             ),
             child: Center(
-              child: Image.asset('assets/icons/ktp.png'),
+              child: Container(
+                height: 18,
+                width: 18,
+                child: Image.asset('assets/icons/check_box_rounded.png'),
+              )
             ),
           ),
           Padding(
@@ -26,17 +31,17 @@ class CardTitle extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                  height: 20,
-                  width: MediaQuery.of(context).size.width,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Text('Informasi Data Diri', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
-                      )
-                    ],
-                  )
+                    height: 20,
+                    width: MediaQuery.of(context).size.width,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: Text('Informasi Data Diri', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, height: 1.325),),
+                        )
+                      ],
+                    )
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 24),

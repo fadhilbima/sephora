@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sephora_project/register/register_widgets/bottom_continue_button.dart';
+import 'package:sephora_project/register/register_widgets/first_widget/bottom_continue_button.dart';
 import 'package:sephora_project/register/register_widgets/register_back_button.dart';
-import 'package:sephora_project/register/register_widgets/register_card.dart';
-import 'package:sephora_project/register/register_widgets/register_title.dart';
+import 'package:sephora_project/register/register_widgets/first_widget/register_card.dart';
+import 'package:sephora_project/register/register_widgets/first_widget/register_title.dart';
 
 class RegisterBuatAkun extends StatefulWidget {
   const RegisterBuatAkun({Key? key}) : super(key: key);

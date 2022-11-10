@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sephora_project/onboarding/onboarding.dart';
+import 'package:sephora_project/register/register.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const OnBoardingPage(),
+      home: const RegisterPermission(),
     );
   }
 }

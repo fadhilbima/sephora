@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sephora_project/register/register.dart';
 
 class OtpKeyboard extends StatelessWidget {
   const OtpKeyboard({Key? key}) : super(key: key);
@@ -7,46 +8,58 @@ class OtpKeyboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 315,
-      width: 290,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                  color: Color(0xFFF3F7FD),
-                  borderRadius: BorderRadius.circular(100)
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return RegisterBuatMpin();
+                  }));
+                },
+                child: Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                        color: Color(0xFFF3F7FD),
+                        borderRadius: BorderRadius.circular(100)
+                    ),
+                    child: Center(
+                      child: Text('1', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
+                    )
                 ),
-                child: Center(
-                  child: Text('1', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
-                )
               ),
-              Container(
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                    color: Color(0xFFF3F7FD),
-                    borderRadius: BorderRadius.circular(100)
+              InkWell(
+                onTap: (){},
+                child: Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                        color: Color(0xFFF3F7FD),
+                        borderRadius: BorderRadius.circular(100)
+                    ),
+                    child: Center(
+                      child: Text('2', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
+                    )
                 ),
-                child: Center(
-                  child: Text('2', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
-                )
               ),
-              Container(
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                    color: Color(0xFFF3F7FD),
-                    borderRadius: BorderRadius.circular(100)
+              InkWell(
+                onTap: (){},
+                child: Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                        color: Color(0xFFF3F7FD),
+                        borderRadius: BorderRadius.circular(100)
+                    ),
+                    child: Center(
+                      child: Text('3', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
+                    )
                 ),
-                child: Center(
-                  child: Text('3', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
-                )
-              )
+              ),
             ],
           ),
           Row(
@@ -122,40 +135,36 @@ class OtpKeyboard extends StatelessWidget {
                 child: Center(
                   child: Text('9', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
                 ),
-              )
+              ),
             ],
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                width: 175,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
-                          color: Color(0xFFF3F7FD),
-                          borderRadius: BorderRadius.circular(100)
-                      ),
-                      child: Center(
-                        child: Text('0', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
-                      ),
-                    ),
-                    Container(
-                      height: 60,
-                      width: 60,
-                      child: Center(
-                        child: Image.asset('assets/icons/delete.png'),
-                      ),
-                    ),
-                  ],
+                height: 60,
+                width: 60,
+              ),
+              Container(
+                height: 60,
+                width: 60,
+                decoration: BoxDecoration(
+                    color: Color(0xFFF3F7FD),
+                    borderRadius: BorderRadius.circular(100)
+                ),
+                child: Center(
+                  child: Text('0', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
+                ),
+              ),
+              Container(
+                height: 60,
+                width: 60,
+                child: Center(
+                  child: Image.asset('assets/icons/delete.png'),
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sephora_project/register/register_widgets/card_items/card_title.dart';
-import 'package:sephora_project/register/register_widgets/card_items/form.dart';
+import 'package:sephora_project/register/register_widgets/card_items/fourth_page_card_item/mpin_card_title.dart';
+import 'package:sephora_project/register/register_widgets/card_items/fourth_page_card_item/mpin_form.dart';
 
-class RegisterCard extends StatelessWidget {
-  const RegisterCard({Key? key}) : super(key: key);
+class MpinCard extends StatelessWidget {
+  const MpinCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class RegisterCard extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(top: 20, left: 20, right: 20),
-            child: CardTitle(),
+            child: MpinCardTitle(),
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 93),
@@ -38,7 +38,7 @@ class RegisterCard extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(top: 118, left: 20, right: 20),
-            child: FormItem(),
+            child: MpinForm(),
           )
         ],
       ),

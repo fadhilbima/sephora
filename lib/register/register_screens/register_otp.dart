@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sephora_project/register/register_widgets/otp_keyboard.dart';
-import 'package:sephora_project/register/register_widgets/otp_pin_input.dart';
-import 'package:sephora_project/register/register_widgets/otp_text.dart';
-import 'package:sephora_project/register/register_widgets/otp_title.dart';
-import 'package:sephora_project/register/register_widgets/timer.dart';
+import 'package:sephora_project/register/register_widgets/otp_widget/otp_keyboard.dart';
+import 'package:sephora_project/register/register_widgets/otp_widget/otp_pin_input.dart';
+import 'package:sephora_project/register/register_widgets/otp_widget/otp_resend_text_button.dart';
+import 'package:sephora_project/register/register_widgets/otp_widget/otp_text.dart';
+import 'package:sephora_project/register/register_widgets/otp_widget/otp_title.dart';
+import 'package:sephora_project/register/register_widgets/otp_widget/timer.dart';
 
 import '../register_widgets/register_back_button.dart';
 
@@ -21,30 +22,24 @@ class _RegisterOtpState extends State<RegisterOtp> {
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                  height: 88,
-                  width: 375,
-                  child: Stack(
-                    alignment: Alignment.bottomLeft,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 20, bottom: 11),
-                        child: ArrowBackButton(),
-                      ),
-                      Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Padding(
-                            padding: EdgeInsets.only(bottom: 14),
-                            child: OtpTitle(),
-                          )
+          Container(
+              height: 88,
+              child: Stack(
+                alignment: Alignment.topLeft,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 20, top: 45),
+                    child: ArrowBackButton(),
+                  ),
+                  Align(
+                      alignment: Alignment.topCenter,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 48),
+                        child: OtpTitle(),
                       )
-                    ],
                   )
-              ),
-            ],
+                ],
+              )
           ),
           Padding(
             padding: EdgeInsets.only(top: 98),
@@ -53,7 +48,7 @@ class _RegisterOtpState extends State<RegisterOtp> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 261),
+            padding: EdgeInsets.symmetric(horizontal: 35, vertical: 261),
             child: OtpText(),
           ),
           Padding(
@@ -61,18 +56,16 @@ class _RegisterOtpState extends State<RegisterOtp> {
             child: Timer(),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 430),
+            padding: EdgeInsets.only(top: 430, right: 42, left: 43),
             child: OtpKeyboard(),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 331),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 22,
-                  width: 232,
-                  child: Row(
+            padding: EdgeInsets.symmetric(horizontal: 72, vertical: 331),
+            child: Container(
+              height: 22,
+              child: Column(
+                children: [
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       OtpInputPin(),
@@ -83,9 +76,14 @@ class _RegisterOtpState extends State<RegisterOtp> {
                       OtpUnInputPin(),
                     ],
                   ),
-                )
-              ],
-            ),
+
+                ],
+              )
+            )
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 383, horizontal: 151),
+            child: ResendTextButton(),
           )
         ],
       ),
