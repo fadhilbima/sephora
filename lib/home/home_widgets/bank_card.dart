@@ -15,7 +15,7 @@ class BankCard extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 80,
+              height: 0,
               color: Colors.red,
             ),
           )

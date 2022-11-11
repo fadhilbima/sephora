@@ -25,6 +25,8 @@ class _PermissionValidateState extends State<PermissionValidate> {
             CheckboxListTile(
               controlAffinity: ListTileControlAffinity.leading,
               contentPadding: EdgeInsets.only(),
+              checkboxShape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4)),
               value: uncheck,
               title: Transform.translate(
                 offset: Offset(-20, 0),

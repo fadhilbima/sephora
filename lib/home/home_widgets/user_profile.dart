@@ -10,8 +10,8 @@ class UserProfile extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            height: 40,
-            width: 40,
+            height: 46,
+            width: 46,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: Colors.black,

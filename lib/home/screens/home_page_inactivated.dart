@@ -27,19 +27,22 @@ class _HomieInactivatedState extends State<HomieInactivated> {
               ],
             ),
           ),
-          SingleChildScrollView(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    WarningInactivated(),
-                    SizedBox(height: 19),
-                    BankCard(),
-                  ],
-                ),
-              )
-          ),
+          Expanded(
+            child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      WarningInactivated(),
+                      SizedBox(height: 19),
+                      BankCard()
+                    ],
+                  ),
+                )
+            ),
+          )
         ],
       )
     );
