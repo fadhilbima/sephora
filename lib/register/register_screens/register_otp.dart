@@ -9,13 +9,14 @@ import 'package:sephora_project/register/register_widgets/otp_widget/timer.dart'
 import '../register_widgets/register_back_button.dart';
 
 class RegisterOtp extends StatefulWidget {
-  const RegisterOtp({Key? key}) : super(key: key);
-
+  RegisterOtp({Key? key}) : super(key: key);
   @override
   State<RegisterOtp> createState() => _RegisterOtpState();
 }
 
 class _RegisterOtpState extends State<RegisterOtp> {
+  final _otplength = 6;
+  String _otpvalue = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,8 +57,23 @@ class _RegisterOtpState extends State<RegisterOtp> {
             child: Timer(),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 430, right: 42, left: 43),
-            child: OtpKeyboard(),
+            padding: EdgeInsets.only(top: 410, right: 42, left: 43),
+            child: OtpKeyboard(
+                changed: (String value) {
+                  if(value=='del'){
+                    return _deleteSession();
+                  }
+                  if (_otpvalue.length < _otplength) {
+                    if(value!=_otplength){
+                      setState(() {
+                        _otpvalue += value;
+                        print(_otpvalue);
+                      });
+                    }
+                  }
+                  print(_otpvalue);
+                }
+            ),
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 72, vertical: 331),
@@ -65,28 +81,31 @@ class _RegisterOtpState extends State<RegisterOtp> {
               height: 22,
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      OtpInputPin(),
-                      OtpInputPin(),
-                      OtpInputPin(),
-                      OtpInputPin(),
-                      OtpUnInputPin(),
-                      OtpUnInputPin(),
-                    ],
-                  ),
-
+                  InputPinGlobal(otpValue: _otpvalue, otpLength: _otplength,)
                 ],
               )
             )
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 383, horizontal: 151),
+            padding: EdgeInsets.symmetric(vertical: 370, horizontal: 151),
             child: ResendTextButton(),
           )
         ],
       ),
     );
   }
+  void _deleteSession() {
+    if(_otpvalue.isNotEmpty){
+      print('Karakter yang baru saja terhapus: ${_otpvalue.split('').last}');
+      final delete = _otpvalue.split('');
+      delete.removeLast();
+      final join = delete.join('');
+      setState(() {
+        _otpvalue = join;
+      });
+      print('All Character Now: $_otpvalue');
+    }
+  }
+
+
 }
