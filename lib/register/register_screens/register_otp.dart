@@ -1,10 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:sephora_project/register/register_widgets/otp_widget/otp_keyboard.dart';
 import 'package:sephora_project/register/register_widgets/otp_widget/otp_pin_input.dart';
 import 'package:sephora_project/register/register_widgets/otp_widget/otp_resend_text_button.dart';
 import 'package:sephora_project/register/register_widgets/otp_widget/otp_text.dart';
 import 'package:sephora_project/register/register_widgets/otp_widget/otp_title.dart';
-import 'package:sephora_project/register/register_widgets/otp_widget/timer.dart';
 
 import '../register_widgets/register_back_button.dart';
 
@@ -17,6 +18,25 @@ class RegisterOtp extends StatefulWidget {
 class _RegisterOtpState extends State<RegisterOtp> {
   final _otplength = 6;
   String _otpvalue = '';
+
+  Timer? timerCount;
+  late int waktuTersisa;
+  final detik = (4*60)+30;
+
+
+  @override
+  void initState(){
+    waktuTersisa = detik;
+    super.initState();
+    timerCount = Timer.periodic(Duration(seconds: 1), (timer) {
+      setState(() {
+        waktuTersisa--;
+      });
+      if(waktuTersisa==0){
+        return timerCount!.cancel();
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +74,7 @@ class _RegisterOtpState extends State<RegisterOtp> {
           ),
           Padding(
             padding: EdgeInsets.only(top: 223),
-            child: Timer(),
+            child: Text(timerReduct(waktuTersisa), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
           ),
           Padding(
             padding: EdgeInsets.only(top: 410, right: 42, left: 43),
@@ -77,14 +97,7 @@ class _RegisterOtpState extends State<RegisterOtp> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 72, vertical: 331),
-            child: Container(
-              height: 22,
-              child: Column(
-                children: [
-                  InputPinGlobal(otpValue: _otpvalue, otpLength: _otplength,)
-                ],
-              )
-            )
+            child: InputPinGlobal(otpValue: _otpvalue, otpLength: _otplength,),
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 370, horizontal: 151),
@@ -107,5 +120,11 @@ class _RegisterOtpState extends State<RegisterOtp> {
     }
   }
 
-
+  String timerReduct(int seconds) {
+    final duration = Duration(seconds: waktuTersisa).toString();
+    final split = duration.split('.').first;
+    final removing = split.split(':')..removeAt(0);
+    final runtime = removing.join(':');
+    return runtime;
+  }
 }

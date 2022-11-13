@@ -17,7 +17,7 @@ class _InputPinGlobalState extends State<InputPinGlobal> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(widget.otpLength, (index) => index+1).map((e) {
         return OtpInputPin(active: e <= widget.otpValue.length);
-      }).toList()
+      }).toList(),
     );
   }
 }
