@@ -31,7 +31,13 @@ class _OtpKeyboardState extends State<OtpKeyboard> {
         OtpButton(text: '7', onPressing: (){widget.changed('7');}),
         OtpButton(text: '8', onPressing: (){widget.changed('8');}),
         OtpButton(text: '9', onPressing: (){widget.changed('9');}),
-        Container(height: 60, width: 60),
+        InkWell(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context){
+              return AktivasiAkun();
+            }));
+          },
+        ),
         OtpButton(text: '0', onPressing: (){widget.changed('0');}),
         InkWell(
           onTap: () {
