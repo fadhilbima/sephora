@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sephora_project/home/home_widgets/card_menu.dart';
 
 import 'big_card.dart';
 
@@ -8,17 +9,11 @@ class BankCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 335/240,
+      aspectRatio: 335/282,
       child: Stack(
         children: [
           BigCard(),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 0,
-              color: Colors.red,
-            ),
-          )
+          CardMenu(),
         ],
       )
     );
