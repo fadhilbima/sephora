@@ -8,7 +8,9 @@ class BigCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.blue,
+        borderRadius: BorderRadius.circular(15)
       ),
+      margin: EdgeInsets.only(bottom: 40),
       padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
