@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sephora_project/notification/widget/notification_back_button.dart';
 
-class NotificationTitle extends StatelessWidget {
-  const NotificationTitle({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('Notifikasi', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600)
-    );
-  }
-}
+import '../notif_title.dart';
 
 class TitleDisplay extends StatelessWidget {
   const TitleDisplay({Key? key}) : super(key: key);
@@ -29,7 +21,7 @@ class TitleDisplay extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: Padding(
               padding: EdgeInsets.only(top: 48),
-              child: NotificationTitle(),
+              child: NotifTitle(),
             ),
           )
         ],
