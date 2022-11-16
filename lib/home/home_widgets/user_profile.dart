@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sephora_project/notification/notification_screen/notification_page.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({Key? key}) : super(key: key);
@@ -31,7 +32,14 @@ class UserProfile extends StatelessWidget {
               ),
             )
           ),
-          Icon(Icons.notifications)
+          InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return NotificationPage();
+              }));
+            },
+            child: Icon(Icons.notifications),
+          )
         ],
       ),
     );
