@@ -24,6 +24,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       body: SafeArea(
           child: SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),

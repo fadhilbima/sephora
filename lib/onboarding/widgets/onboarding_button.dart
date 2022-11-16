@@ -9,25 +9,14 @@ class OnBoardingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
-      child: InkWell(
-        onTap: (){
-          Navigator.push(context, MaterialPageRoute(
-              builder: (context) {
-                return RegisterBuatAkun();
-              }
-          ));
+      child: ElevatedButton(
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context){
+            return RegisterBuatAkun();
+          }));
         },
-        child: Container(
-            height: 40,
-            decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(10)
-            ),
-            child: Center(
-              child: Text('Buat Akun Sekarang', style: TextStyle(fontSize: 14, color: Colors.white),),
-            )
-        ),
-      ),
+        child: Text('Buat Akun Sekarang'),
+      )
     );
   }
 }

@@ -7,31 +7,33 @@ class MpinContinueButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 22),
-          child: InkWell(
-            onTap: (){
-              Navigator.push(context,
-                  MaterialPageRoute(
-                      builder: (context) {
-                        return RegisterPermission();
-                      }
-                  ),
-              );
-            },
-            child: Container(
-              height: 40,
-              decoration: BoxDecoration(
-                color: Color(0xFF2F82FF),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(
-                child: Text('Selanjutnya', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white)),
-              ),
-            ),
+        Container(
+          height: 120,
+          width: MediaQuery.of(context).size.width,
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return RegisterPermission();
+                }));
+              }, child: Text('Selanjutnya')),
+            ],
           ),
-        )
+          decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.grey,
+                    blurRadius: 10
+                )
+              ]
+          ),
+        ),
       ],
     );
   }

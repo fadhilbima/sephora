@@ -7,14 +7,16 @@ class AgreeDisagreeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(
-          height: 40,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+            height: 120,
+            color: Colors.white,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
                   child: GestureDetector(
                     onTap: () {
                       showDialog(
@@ -28,6 +30,7 @@ class AgreeDisagreeButton extends StatelessWidget {
                     },
                     child: Container(
                       height: 40,
+                      margin: EdgeInsets.symmetric(vertical: 5),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(color: Color(0xFF2F82FF))
@@ -38,14 +41,12 @@ class AgreeDisagreeButton extends StatelessWidget {
                             color: Color(0xFF2F82FF))),
                       ),
                     ),
-                  )
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  ),
+                ),
+                SizedBox(width: 10,),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: (){
                       showDialog(
                           context: context,
                           builder: (context) =>
@@ -57,22 +58,11 @@ class AgreeDisagreeButton extends StatelessWidget {
                               )
                       );
                     },
-                    child: Container(
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF2F82FF),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Center(
-                        child: Text('Setuju', style: TextStyle(fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white)),
-                      ),
-                    ),
-                  )
-              ),
-            ],
-          ),
+                    child: Text('Setuju'),
+                  ),
+                )
+              ],
+            )
         )
       ],
     );
