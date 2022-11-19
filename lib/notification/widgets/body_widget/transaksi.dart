@@ -1,38 +1,31 @@
 import 'package:flutter/material.dart';
 
-
 class NotificationTransactionDisplay extends StatelessWidget {
   const NotificationTransactionDisplay({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 154),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('12 November 2022'),
-              NotificationBody(transactionType: TransactionType.keluar),
-              NotificationBody(transactionType: TransactionType.masuk),
-              NotificationBody(transactionType: TransactionType.pembayaran),
-              NotificationBody(transactionType: TransactionType.pembelian),
-              NotificationBody(transactionType: TransactionType.pembelian),
-              NotificationBody(transactionType: TransactionType.pembelian),
-              NotificationBody(transactionType: TransactionType.pembelian),
-            ],
-          ),
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('12 November 2022'),
+            NotificationBody(transactionType: TransactionType.keluar),
+            NotificationBody(transactionType: TransactionType.masuk),
+            NotificationBody(transactionType: TransactionType.pembayaran),
+            NotificationBody(transactionType: TransactionType.pembelian),
+            NotificationBody(transactionType: TransactionType.pembelian),
+            NotificationBody(transactionType: TransactionType.pembelian),
+            NotificationBody(transactionType: TransactionType.pembelian),
+          ],
         ),
-      )
+      ),
     );
   }
 }
-
-
-
 
 enum TransactionType{
   keluar,
@@ -42,8 +35,9 @@ enum TransactionType{
 }
 
 class NotificationBody extends StatelessWidget {
-  NotificationBody({Key? key, required this.transactionType}) : super(key: key);
-  late TransactionType transactionType;
+  const NotificationBody({Key? key, required this.transactionType}) : super(key: key);
+
+  final TransactionType transactionType;
   @override
   Widget build(BuildContext context) {
     return Builder(
