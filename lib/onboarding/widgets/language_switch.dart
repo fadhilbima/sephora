@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LanguageSwitch extends StatefulWidget {
-  const LanguageSwitch({Key? key, required this.isEN}) : super(key: key);
+  LanguageSwitch({Key? key, required this.isID, required this.stage}) : super(key: key);
 
-  final Function(bool) isEN;
+  final bool stage;
+  final Function(bool) isID;
   @override
   State<LanguageSwitch> createState() => _LanguageSwitchState();
 }
@@ -15,25 +17,34 @@ class _LanguageSwitchState extends State<LanguageSwitch>
   final _circleSize = 30.0;
   final _containerHeight = 30.0;
   final _animationDuration = 100;
-  bool _isEN = false;
+  bool _isID = false;
 
   late AnimationController _animationController;
   late Animation _horizontalMovementAnimation;
+  late SharedPreferences prefs;
+
 
   @override
   void initState() {
+    _isID = widget.stage;
     super.initState();
     _animationController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: _animationDuration),
     );
     _horizontalMovementAnimation = Tween<double>(
-      begin: _switchWidth - _circleSize,
-      end: 0.0,
+      begin: 0.0,
+      end: _switchWidth - _circleSize,
     ).animate(_animationController);
     _animationController.addListener(() {
       setState(() {});
     });
+    (widget.stage);
+    if(widget.stage==true) {
+      _animationController.forward();
+    } else {
+      _animationController.reverse();
+    }
   }
 
   @override
@@ -43,13 +54,18 @@ class _LanguageSwitchState extends State<LanguageSwitch>
       height: _containerHeight,
       child: GestureDetector(
         onTap: (){
-          setState(() => _isEN = !_isEN);
-          widget.isEN(_isEN);
-          if (_isEN) {
-            _animationController.forward();
-          } else {
-            _animationController.reverse();
-          }
+          setState(() {
+            _isID = !_isID;
+            widget.isID(_isID);
+            if (_isID) {
+              _animationController.forward();
+              print(_isID);
+            } else {
+              _animationController.reverse();
+              print(_isID);
+            }
+          });
+
         },
         child: Stack(
           children: [
@@ -66,25 +82,25 @@ class _LanguageSwitchState extends State<LanguageSwitch>
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: _horizontalMovementAnimation.value),
-              width: _circleSize,
-              height: _circleSize,
-              decoration: BoxDecoration(
-                color: Color(0xFF2F82FF),
-                border: Border.all(color: Colors.white),
-                shape: BoxShape.circle
-              ),
-              child: Align(
-                alignment: Alignment.center,
-                child: Text(
-                  _isEN ? 'ID' : 'EN',
-                  style: const TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                  ),
+                margin: EdgeInsets.only(left: _horizontalMovementAnimation.value),
+                width: _circleSize,
+                height: _circleSize,
+                decoration: BoxDecoration(
+                    color: Color(0xFF2F82FF),
+                    border: Border.all(color: Colors.white),
+                    shape: BoxShape.circle
                 ),
-              )
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    _isID ? 'EN' : 'ID',
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                    ),
+                  ),
+                )
             )
           ],
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sephora_project/home/home_export.dart';
 import 'package:sephora_project/onboarding/onboarding.dart';
+import 'package:sephora_project/pref/view/dashboard.dart';
 import 'package:sephora_project/register/register.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const OnBoardingPage(),
+      home: OnBoardingPage(),
     );
   }
 }

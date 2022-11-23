@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sephora_project/home/home_export.dart';
 import 'package:sephora_project/register/register.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Success extends StatelessWidget {
   const Success({Key? key, required this.text}) : super(key: key);
 
   final String text;
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +29,9 @@ class Success extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: InkWell(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return HomieInactivated();
-                  }));
+                onTap: () async {
+                  final prefs = await SharedPreferences.getInstance();
+                  prefs.setBool('isLoggedIn', true);
                 },
                 child: Container(
                   height: 40,
